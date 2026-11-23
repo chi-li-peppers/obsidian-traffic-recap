@@ -11,6 +11,8 @@ Your Google Analytics 4, Google Search Console, Plausible and PostHog metrics, r
 
 Traffic Recap pulls website visitors, pageviews, top pages and Search Console queries into clean Markdown tables and daily note properties — ready to chart with Obsidian **Bases** or Dataview.
 
+![Yesterday's traffic and SEO in your daily note](docs/shot-1.png)
+
 ## Features
 
 - **Google Analytics 4 (GA4)**: active users, sessions, pageviews, bounce rate, key events and top pages
@@ -24,6 +26,8 @@ Traffic Recap pulls website visitors, pageviews, top pages and Search Console qu
 - **Works on mobile** & includes **Demo mode**
 
 ## Live block
+
+![Live traffic report block in any note](docs/shot-2.png)
 
 ````markdown
 ```traffic-recap
