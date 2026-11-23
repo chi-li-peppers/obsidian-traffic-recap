@@ -40,7 +40,7 @@ const DEFAULT_SETTINGS = {
   gscLagDays: 0,
 
   plausibleEnabled: false,
-  plausibleBaseUrl: "https://plausible.io",
+  plausibleBaseUrl: "",
   plausibleSiteId: "",
   plausibleApiKey: "",
   plausibleApiKeySecret: "",
@@ -209,6 +209,7 @@ function posDelta(cur, prev) {
 
 function normalizeHttpsUrl(raw, fallback, label) {
   const s = String(raw || "").trim() || fallback;
+  if (!s) throw new Error(`${label}: server URL is required`);
   if (!/^https:\/\//i.test(s)) throw new Error(`${label}: URL must start with https://`);
   return s.replace(/\/+$/, "");
 }
@@ -482,7 +483,7 @@ class PlausibleSource {
     if (!siteId) throw new Error("Plausible: site domain is required");
     const token = this.secret("plausibleApiKeySecret", "plausibleApiKey").trim();
     if (!token) throw new Error("Plausible: API key is required");
-    const base = normalizeHttpsUrl(this.s.plausibleBaseUrl, "https://plausible.io", "Plausible");
+    const base = normalizeHttpsUrl(this.s.plausibleBaseUrl, "", "Plausible");
     const url = `${base}/api/v2/query`;
     const headers = { Authorization: `Bearer ${token}` };
 
@@ -1451,7 +1452,7 @@ class TrafficRecapSettingTab extends PluginSettingTab {
     if (s.plausibleEnabled) {
       text(new Setting(containerEl).setName("Site domain"), "plausibleSiteId", "example.com");
       secretField(new Setting(containerEl).setName("Stats API key"), "plausibleApiKeySecret", "plausibleApiKey", "traffic-recap-plausible-key");
-      text(new Setting(containerEl).setName("Base URL").setDesc("Default https://plausible.io, or your self-hosted https:// URL."), "plausibleBaseUrl", "https://plausible.io");
+      text(new Setting(containerEl).setName("Server URL").setDesc("Your Plausible server URL (must start with https://)."), "plausibleBaseUrl", "https://analytics.example.com");
       new Setting(containerEl).addButton((b) => b.setButtonText("Test Plausible").onClick(() => this.plugin.testSource("plausible", b)));
     }
 

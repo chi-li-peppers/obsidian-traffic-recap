@@ -44,7 +44,7 @@ async function main() {
     googleClientId: "cid", googleClientSecret: "sec", googleRefreshToken: "rt",
     ga4PropertyId: "properties/123456",
     gscSiteUrl: "sc-domain:example.com", gscLagDays: 2,
-    plausibleBaseUrl: "https://plausible.io", plausibleSiteId: "example.com", plausibleApiKey: "pk_123",
+    plausibleBaseUrl: "https://analytics.example.com", plausibleSiteId: "example.com", plausibleApiKey: "pk_123",
     posthogHost: "https://us.posthog.com", posthogProjectId: "42", posthogApiKey: "phx_123",
   };
   const plugin = { settings };
@@ -82,7 +82,7 @@ async function main() {
       }
       return { status: 200, json: { rows: [{ clicks: 120, impressions: 3000, ctr: 0.04, position: 6.5 }] } };
     }
-    if (o.url.includes("plausible.io/api/v2/query")) {
+    if (o.url.includes("analytics.example.com/api/v2/query")) {
       const b = JSON.parse(o.body);
       if (b.dimensions) {
         return { status: 200, json: { results: [{ dimensions: ["/"], metrics: [600, 410] }] } };
