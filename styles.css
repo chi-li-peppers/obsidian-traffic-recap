@@ -1,0 +1,49 @@
+.traffic-recap-block {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  padding: var(--size-4-2) var(--size-4-3) var(--size-4-1);
+  background: var(--background-primary-alt);
+}
+.traffic-recap-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-4-2);
+  margin-bottom: var(--size-4-1);
+}
+.traffic-recap-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4-1);
+}
+.traffic-recap-title {
+  font-size: var(--font-ui-small);
+  font-weight: var(--font-semibold);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.traffic-recap-refresh,
+.traffic-recap-copy {
+  font-size: var(--font-ui-smaller);
+}
+.traffic-recap-loading {
+  color: var(--text-faint);
+  padding: var(--size-4-2) 0;
+}
+.traffic-recap-error {
+  color: var(--text-error);
+  padding: var(--size-4-2) 0;
+}
+.traffic-recap-body table {
+  font-size: var(--font-ui-small);
+}
+.is-phone .traffic-recap-body {
+  overflow-x: auto;
+}
+.traffic-recap-intro {
+  margin-bottom: var(--size-4-4);
+  padding: var(--size-4-2) var(--size-4-3);
+  border-radius: var(--radius-m);
+  background: var(--background-secondary);
+}

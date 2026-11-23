@@ -1,0 +1,10 @@
+{
+  "id": "traffic-recap",
+  "name": "Traffic Recap",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.10",
+  "description": "Pull Google Analytics 4, Google Search Console, Plausible and PostHog traffic metrics into your notes, with daily note automation.",
+  "author": "David",
+  "authorUrl": "https://github.com/chi-li-peppers",
+  "isDesktopOnly": false
+}
