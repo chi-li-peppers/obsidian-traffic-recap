@@ -398,7 +398,7 @@ class GSCSource {
     const lag = Math.max(0, Math.floor(num(this.s.gscLagDays)));
     const effRange = lag > 0 && opts.applyLag ? shiftRange(range, -lag) : range;
     const token = await this.oauth.accessToken();
-    const url = `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(site)}/searchAnalytics/query`;
+    const url = `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodeURIComponent(site)}/searchAnalytics/query`;
     const headers = { Authorization: `Bearer ${token}` };
 
     const sumRes = await http({

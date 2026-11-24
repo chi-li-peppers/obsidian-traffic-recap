@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## [1.0.2] - 2026-11-24
+
+### Changed
+
+- Migrated Google Search Console API endpoint from legacy `www.googleapis.com` to `searchconsole.googleapis.com`.
+- Added step-by-step setup instructions for GA4, Search Console, Plausible and PostHog in `README.md`.
+
 ## [1.0.1] - 2026-11-24
 
 ### Changed
@@ -19,4 +26,6 @@ All notable changes to this project are documented here. The format follows [Kee
 - Obsidian Secret Storage (1.11.4+) support with fallback for older versions
 - Demo mode, desktop and mobile support
 
+[1.0.2]: https://github.com/chi-li-peppers/obsidian-traffic-recap/releases/tag/1.0.2
+[1.0.1]: https://github.com/chi-li-peppers/obsidian-traffic-recap/releases/tag/1.0.1
 [1.0.0]: https://github.com/chi-li-peppers/obsidian-traffic-recap/releases/tag/1.0.0

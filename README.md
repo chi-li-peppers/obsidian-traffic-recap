@@ -44,14 +44,36 @@ Options:
 - `filter`: optional case-insensitive substring filter on page path or query
 - `limit`: optional maximum rows per table
 
+## Connecting sources
+
+### Google Analytics 4 & Search Console
+1. In Google Cloud Console, enable **Google Analytics Data API** and/or **Google Search Console API** and create a Desktop OAuth client.
+2. Generate a refresh token via [OAuth 2.0 Playground](https://developers.google.com/oauthplayground) (tick *Use your own OAuth credentials*) with scopes `https://www.googleapis.com/auth/analytics.readonly` and/or `https://www.googleapis.com/auth/webmasters.readonly`.
+3. Paste your GA4 numeric property ID and/or Search Console site URL (`sc-domain:example.com` or `https://example.com/`), enter OAuth credentials, and press **Test**.
+
+### Plausible Analytics
+1. Create a Stats API key in your Plausible account settings.
+2. Enter your **Server URL** (`https://plausible.io` for Cloud, or your self-hosted `https://…` URL), site domain and API key, then press **Test Plausible**.
+
+### PostHog
+1. Create a Personal API key with `query:read` scope in PostHog settings.
+2. Enter your Project ID, Host (`https://us.posthog.com`, `https://eu.posthog.com` or self-hosted) and API key, then press **Test PostHog**.
+
 ## Privacy
 
-- Requests go only to `oauth2.googleapis.com`, `analyticsdata.googleapis.com`, `www.googleapis.com`, your Plausible host and your PostHog host.
+- Requests go only to `oauth2.googleapis.com`, `analyticsdata.googleapis.com`, `searchconsole.googleapis.com`, your Plausible host and your PostHog host.
 - On Obsidian 1.11.4+, secrets can be stored in Obsidian's built-in **Secret Storage** outside `data.json`.
 
 ## Install
 
-Install manually by copying `main.js`, `manifest.json` and `styles.css` from the [latest release](../../releases/latest) to `<vault>/.obsidian/plugins/traffic-recap/` and enabling the plugin.
+Search for **Traffic Recap** in **Settings → Community plugins**, or install manually by copying `main.js`, `manifest.json` and `styles.css` from the [latest release](../../releases/latest) to `<vault>/.obsidian/plugins/traffic-recap/` and enabling the plugin.
+
+## More Obsidian plugins & themes
+
+- **[Ad Recap](https://github.com/chi-li-peppers/obsidian-ad-recap)** — Google Ads & Meta Ads metrics in your notes
+- **[UTM Vault](https://github.com/chi-li-peppers/obsidian-utm-vault)** — build, validate and audit UTM tracking links
+- **[Bases Conditional Format](https://github.com/chi-li-peppers/obsidian-bases-conditional-format)** — colour badges, row highlights and progress bars for Obsidian Bases
+- **[Chili](https://github.com/chi-li-peppers/obsidian-chili)** & **[Popcorn](https://github.com/chi-li-peppers/obsidian-popcorn)** — Obsidian themes
 
 ## License
 

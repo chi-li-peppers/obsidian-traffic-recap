@@ -72,7 +72,7 @@ async function main() {
         json: { rows: [{ metricValues: [{ value: "300" }, { value: "350" }, { value: "520" }, { value: "0.42" }, { value: "14" }] }] },
       };
     }
-    if (o.url.includes("webmasters/v3/sites/")) {
+    if (o.url.includes("searchconsole.googleapis.com/webmasters/v3/sites/")) {
       const b = JSON.parse(o.body);
       if (b.dimensions) {
         return {
